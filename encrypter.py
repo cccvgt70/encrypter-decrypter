@@ -6,7 +6,7 @@ zmienna = int(datetime.utcnow().strftime('%f')[:-3])
 
 
 def szyfr():
-    with open('krzaki.txt', 'w') as f:
+    with open('krzaki.txt', 'w',encoding='utf8') as f:
         f.write('')
         f.close()
 
@@ -17,7 +17,7 @@ def szyfr():
         for c in d:
             a = ord(c) + 1000 + zmienna
 
-            with open('zaszyfrowane.txt', 'a') as k:
+            with open('zaszyfrowane.txt', 'a',encoding='utf8') as k:
                 k.write(str(a))
                 k.close()
 
@@ -25,11 +25,11 @@ def szyfr():
         g = file.read()
         print(g)
 
-    with open('zaszyfrowane_wtornie.txt', 'a') as lu:
+    with open('zaszyfrowane_wtornie.txt', 'a',encoding='utf8') as lu:
         for i in g:
             lu.write(str(ord(i)))
 
-    with open('zaszyfrowane_wtornie.txt', 'r') as w:
+    with open('zaszyfrowane_wtornie.txt', 'r',encoding='utf8') as w:
         while True:
             czteryznaki = w.read(4)
             with open('krzaki.txt', 'a', encoding='utf-8') as r:
@@ -38,39 +38,39 @@ def szyfr():
                 c = chr(int(czteryznaki))
                 r.write(c)
 
-    with open('zaszyfrowane.txt', 'w') as f:
+    with open('zaszyfrowane.txt', 'w',encoding='utf8') as f:
         f.write('')
         f.close()
 
-    with open('zaszyfrowane_wtornie.txt', 'w') as f:
+    with open('zaszyfrowane_wtornie.txt', 'w',encoding='utf8') as f:
         f.write('')
         f.close()
 
 
 def odszyfr():
-    with open('odszyfrowane.txt', 'w') as f:
+    with open('odszyfrowane.txt', 'w',encoding='utf8') as f:
         f.write('')
         f.close()
 
     with open(f'{plik}.txt', 'r',encoding='utf-8')as pr:
         while True:
             znak = pr.read(1)
-            with open('zaszyfrowane_wtornie.txt', 'a')as zsz:
+            with open('zaszyfrowane_wtornie.txt', 'a',encoding='utf8')as zsz:
                 if znak == '':
                     break
                 q = str(ord(znak))
                 zsz.write(q)
 
-    with open('zaszyfrowane_wtornie.txt', "r") as t:
+    with open('zaszyfrowane_wtornie.txt', "r",encoding='utf8') as t:
         while True:
             dwaznaki = t.read(2)
-            with open('odszyfrowane.txt', 'a') as q:
+            with open('odszyfrowane.txt', 'a',encoding='utf8') as q:
                 if dwaznaki == '':
                     break
                 e = chr(int(dwaznaki))
                 q.write(e)
 
-    with open('odszyfrowane.txt', 'r') as w:
+    with open('odszyfrowane.txt', 'r',encoding='utf8') as w:
         while True:
             trzyznaki = w.read(4)
             with open(f'{data}--{plik}--odszyfrowano.txt', 'a', encoding='utf-8') as r:
@@ -80,15 +80,15 @@ def odszyfr():
                 c = chr(fr)
                 r.write(c)
 
-    with open('zaszyfrowane.txt', 'w') as f:
+    with open('zaszyfrowane.txt', 'w',encoding='utf8') as f:
         f.write('')
         f.close()
 
-    with open('zaszyfrowane_wtornie.txt', 'w') as f:
+    with open('zaszyfrowane_wtornie.txt', 'w',encoding='utf8') as f:
         f.write('')
         f.close()
 
-    with open('krzaki.txt', 'w') as f:
+    with open('krzaki.txt', 'w',encoding='utf8') as f:
         f.write('')
         f.close()
 
